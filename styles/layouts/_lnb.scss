@@ -1,4 +1,6 @@
 .lnb {
+  $lnb-ieight-sm: 40px;
+  $lnb-height-md: 50px;
   $lnb-link-padding: 8px;
   $grid-margin: $sm-margin + $gutter / 2;
 
@@ -8,7 +10,7 @@
   &-list {
     @include inline-flexbox(start);
     // width: max-content;
-    height: 40px;
+    height: $lnb-ieight-sm;
     padding: 0 $grid-margin -  $lnb-link-padding;
     margin-left: -#{$grid-margin};
     white-space: nowrap;
@@ -29,7 +31,7 @@
       @include flexbox;
       @include text-style(13, $dark);
       position: relative;
-      height: 40px;
+      height: $lnb-ieight-sm;
       padding: 0 $lnb-link-padding;
       font-weight: 700;
       border-bottom: 2px solid transparent;
@@ -43,6 +45,25 @@
         color: $blue;
       }
     }
-    
+  }
+
+  @include responsive(T) {
+    height: $lnb-height-md;
+    overflow: visible;
+    border-bottom: 1px solid $border;
+
+    &-list {
+      height: auto;
+      padding: 0;
+      margin-left: 0;
+      border-bottom: 0;
+    }
+
+    &-item {
+      a {
+        @include text-style(14);
+        height: $lnb-height-md;
+      }
+    }
   }
 }
