@@ -45,7 +45,11 @@
   @include responsive(T) {
     height: 54px;
     background-color: $background;
-    border-bottom: none;
+    border-bottom: 0;
+
+    &-list {
+      margin: 0;
+    }
 
     &-item {
       button {
