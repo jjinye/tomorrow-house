@@ -10,9 +10,12 @@
       @include flexbox(start);
 
       dd,
-      strong ::after {
-        margin: 0 4px;
-        content: '|';
+      strong {
+
+        &::after {
+          margin: 0 4px;
+          content: '|';
+        }
       }
 
       dd:last-child::after {
@@ -37,9 +40,26 @@
   &-body {
     @include text-style(13);
 
-    .qustion-content {
+    .inquiry-content {
       position: relative;
       padding-left: 20px;
+
+      &:first-child:not(:last-child) {
+        margin-bottom: 12px;
+      }
+
+      .seller {
+        margin-bottom: 4px;
+        @include flexbox(start);
+
+        strong {
+          margin-right: 4px;
+        }
+
+        time {
+          @include text-style(12, $tertiary);
+        }
+      }
 
       span {
         position: absolute;
@@ -71,9 +91,21 @@
     &-body {
       @include text-style(14);
 
-      .qustion-content {
+      .inquiry-content {
         @include text-style(16);
         padding-left: 24px;
+
+        &:first-child:not(:last-child) {
+          margin-bottom: 16px;
+        }
+
+        .seller {
+          margin-bottom: 8px;
+
+          strong {
+            @include text-style(16);
+          }
+        }
       }
     }
   }
