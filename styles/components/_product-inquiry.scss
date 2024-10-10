@@ -1,23 +1,36 @@
 .product-inquiry {
-  padding-bottom: 0;
-
+  .inquiry-empty {
+    @include text-style(16, $secondary);
+    padding: 48px 0;
+    text-align: center; 
+  }
+  
   @include mobile-only {
+    padding-bottom: 0;
+    
     .product-section-header .text-button,
     .product-section-content {
       display: none;
     }
+
+    &.is-open {
+      padding-bottom: 20px;
+  
+      .product-section-header .text-button,
+      .product-section-content {
+        display: block;
+      }
+  
+      .product-section-header .icon-button {
+        display: none;
+      }
+    }
   }
 
-  &.is-open {
-    padding-bottom: 20px;
-
-    .product-section-header .text-button,
-    .product-section-content {
-      display: block;
-    }
-
-    .product-section-header .icon-button {
-      display: none;
+  @include responsive(T) {
+    .inquiry-empty {
+      padding: 28px 0;
     }
   }
+
 }
